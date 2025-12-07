@@ -23,7 +23,7 @@ be faster.
 The array will be sizable such that it cannot fit into cache memory alone so that we can see the difference
 between DRAM and cache. The size will be 1MB (1,000KB). This is:
 
-  N Items: 1,000,000 / sizeof(int)
+    N Items: 1,000,000 / sizeof(int)
 
 We will access N items randomly, roughly 250,000. We expect that more than half of the accesses should be within L1 cache and barely any accesses should be in DRAM due to the principle of locality.
 
@@ -44,9 +44,7 @@ python3 generate-scatterplot.py
 
 A graph is generated to view the results of the test.
 
-[Memory Access Latency Clustered by K-Means](./memory-scatterplot.png)
-
-Figure 1: Memory Access Latency Clustered by K-Means
+![Memory Access Latency Clustered by K-Means](./memory-scatterplot.png)
 
 The data aggregates to the smallest nanoseconds (10^3). Now accessing cache memory is usually much faster, \~6ns, but accounting for system call overhead, it adds to the time.
 
